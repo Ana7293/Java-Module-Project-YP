@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Product {
-    static String name;
-    static double price;
-    static double sum = 0;
-    static ArrayList<String> listPro = new ArrayList<>();
+    String name;
+    double price;
+    double sum = 0;
+    ArrayList<String> listPro = new ArrayList<>();
 
-    public static void products() {
+    public void products() {
 
         System.out.println("Укажите название и стоимость каждого товара?");
         name = "";
@@ -22,12 +22,11 @@ public class Product {
             priceSum();
             System.out.println("Товар успешно добавлен!\n----------");
             System.out.println("Хотите добавить еще один товар? Если нет, то введите - Завершить");
-
         }
 
     }
 
-    private static void priceSum() {
+    private void priceSum() {
         System.out.println("Стоимость товара = ");
         String priceStr = Main.scanner.next();
         try {
@@ -42,7 +41,7 @@ public class Product {
         }
         sum = sum + price;
     }
-    public static void shoplist() {
+    public void shoplist() {
         System.out.println("----------\nДобавленные товары:");
         for (int i = 0; i < listPro.size(); i++) {
             System.out.println(listPro.get(i));

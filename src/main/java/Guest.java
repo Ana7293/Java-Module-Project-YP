@@ -1,27 +1,20 @@
-import java.util.InputMismatchException;
 public class Guest {
-    static int guestIto;
-    static int guests;
-    public static int numGuests() {
+    int guests;
+    public void numGuests() {
         System.out.println("Здравствуйте. Введите количество гостей:");
-        String guestsStr = Main.scanner.next();
-        try {
-            guests = Integer.parseInt(guestsStr);
-        } catch (Exception e) {
-            guests = -1;
-        }
-            while (true) {
-                if (guests <= 1) {
-                    while (guests <= 1) {
-                        System.out.println("Ошибка, попробуйте еще раз!\n----------");
-                        System.out.println("Введите количество гостей:");
-                        guests = Main.scanner.nextInt();
-                    }
-                } else {
-                    guestIto = guests;
-
+        while (true) {
+            String guestsStr = Main.scanner.next();
+            try {
+                int ans = Integer.parseInt(guestsStr);
+                if (ans <= 1) {
+                    throw new RuntimeException();
                 }
-                return guestIto;
+                guests = ans;
+                return;
+            } catch (Exception e) {
+                System.out.println("Ошибка, попробуйте еще раз!\n----------");
+                System.out.println("Введите количество гостей:");
             }
+        }
     }
 }

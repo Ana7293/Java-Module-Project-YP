@@ -1,8 +1,16 @@
 public class Calculator {
 
-    static double check = 0;
-    public static void cheakCalcForm() {
-        check = Product.sum / Guest.guestIto;
+    private double check = 0;
+    private Product product;
+    private Guest guest;
+
+    public Calculator(Product product, Guest guest) {
+        this.product = product;
+        this.guest = guest;
+    }
+
+    public void cheakCalcForm() {
+        check = product.sum / guest.guests;
         double checkF = Math.floor(check);
         int checkO = (int) checkF % 10;
     switch (checkO)
